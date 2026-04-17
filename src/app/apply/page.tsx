@@ -127,11 +127,9 @@ function Confetti({ active }: { active: boolean }) {
 export default function ApplyPage() {
   const [submitted, setSubmitted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [consent, setConsent] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!consent) return;
     setSubmitted(true);
     setShowConfetti(true);
   }
@@ -289,34 +287,9 @@ export default function ApplyPage() {
                     />
                   </div>
 
-                  {/* Consent checkbox */}
-                  <div className="rounded-lg border border-border/60 bg-muted/30 p-4">
-                    <label className="flex items-start gap-3 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        name="consent"
-                        checked={consent}
-                        onChange={(e) => setConsent(e.target.checked)}
-                        className="mt-1 h-4 w-4 rounded border-gray-300 accent-gold"
-                        required
-                      />
-                      <span className="text-sm text-muted-foreground leading-relaxed">
-                        I consent to Mazal Mortgages sharing my details and enquiry
-                        information with a licensed mortgage broker, and understand
-                        Mazal Mortgages may receive a referral fee. I have read and
-                        agree to the{" "}
-                        <a href="/privacy" className="text-gold underline">
-                          Privacy Policy
-                        </a>
-                        .
-                      </span>
-                    </label>
-                  </div>
-
                   <Button
                     type="submit"
-                    disabled={!consent}
-                    className="w-full bg-gold text-navy font-semibold hover:bg-gold-light disabled:opacity-50"
+                    className="w-full bg-gold text-navy font-semibold hover:bg-gold-light"
                   >
                     Submit Referral Enquiry
                     <ArrowRight className="ml-2 h-4 w-4" />
