@@ -10,62 +10,62 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Testimonials | Mazal Mortgages",
-  description: "Read what our clients say about their experience with Mazal Mortgages.",
+  description: "Read what our clients say about their experience using the Mazal Mortgages broker referral service.",
 };
 
 const testimonials = [
   {
-    quote: "Mazal Mortgages made the entire process seamless. Their expertise saved us over $40,000 in interest over the life of our loan. Cannot recommend highly enough.",
+    quote: "Mazal connected us with an incredible broker who made the entire process seamless. Their referral saved us over $40,000 in interest over the life of our loan.",
     name: "Sarah & David Chen",
-    type: "Home Loan",
+    type: "Home Loan Referral",
     rating: 5,
   },
   {
-    quote: "As a first home buyer, I was completely overwhelmed. The team at Mazal guided me through every single step with patience and professionalism. I couldn't have done it without them.",
+    quote: "As a first home buyer, I had no idea where to start. Mazal introduced me to a broker who guided me through every step with patience and professionalism.",
     name: "James Morrison",
-    type: "First Home Buyer",
+    type: "First Home Buyer Referral",
     rating: 5,
   },
   {
-    quote: "They restructured our investment portfolio loans and unlocked equity we didn't know we had. Absolute game-changer for our property strategy.",
+    quote: "The broker Mazal referred us to restructured our investment portfolio loans and unlocked equity we didn't know we had. Fantastic referral service.",
     name: "Priya Patel",
-    type: "Investment Loan",
+    type: "Investment Loan Referral",
     rating: 5,
   },
   {
-    quote: "Refinancing seemed daunting until I spoke with Mazal. They handled everything and got me a rate 1.2% lower than what I was paying. The savings are incredible.",
+    quote: "Refinancing seemed daunting until Mazal connected me with a specialist broker. They handled everything and got me a rate 1.2% lower than what I was paying.",
     name: "Tom Blackwood",
-    type: "Refinancing",
+    type: "Refinancing Referral",
     rating: 5,
   },
   {
-    quote: "Professional, transparent, and genuinely caring about getting the best outcome. They found us a construction loan that other brokers said wasn't possible.",
+    quote: "The broker Mazal introduced us to found a construction loan that other brokers said wasn't possible. So grateful for the referral.",
     name: "Anita & Raj Kumar",
-    type: "Construction Loan",
+    type: "Construction Loan Referral",
     rating: 5,
   },
   {
-    quote: "I've referred three friends to Mazal after my own experience. Every single one has thanked me. That says it all.",
+    quote: "I've recommended Mazal's referral service to three friends after my own experience. Every single one has thanked me. That says it all.",
     name: "Michelle Nguyen",
-    type: "Home Loan",
+    type: "Home Loan Referral",
     rating: 5,
   },
   {
-    quote: "The commercial loan process was complex but the team managed every detail. My business premises were settled on time and under budget.",
+    quote: "The commercial loan process was complex but the broker Mazal connected us with managed every detail. Settled on time and under budget.",
     name: "Robert Fitzgerald",
-    type: "Commercial Loan",
+    type: "Commercial Loan Referral",
     rating: 5,
   },
   {
-    quote: "I was shocked at how easy the process was. From first call to settlement, everything was handled professionally. We're already planning investment property number two with Mazal.",
+    quote: "From first enquiry to broker introduction, everything was handled professionally. We're already planning investment property number two with the same broker.",
     name: "Lauren & Steve Hill",
-    type: "Investment Loan",
+    type: "Investment Loan Referral",
     rating: 5,
   },
   {
-    quote: "Being self-employed, I thought getting a good home loan would be impossible. Mazal found me options I didn't even know existed. Brilliant service.",
+    quote: "Being self-employed, I thought getting a good home loan would be impossible. Mazal referred me to a broker who found options I didn't know existed.",
     name: "Chris Papadopoulos",
-    type: "Home Loan",
+    type: "Home Loan Referral",
     rating: 5,
   },
 ];
@@ -82,8 +82,8 @@ export default function TestimonialsPage() {
             Trusted by <span className="text-gold">Thousands</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
-            Don&apos;t just take our word for it — hear from clients who&apos;ve
-            experienced the Mazal difference.
+            Don&apos;t just take our word for it — hear from people who used
+            our referral service to connect with great brokers.
           </p>
         </div>
       </section>
@@ -123,10 +123,10 @@ export default function TestimonialsPage() {
         <ScrollReveal animation="zoom-in">
         <div className="text-center">
           <h2 className="font-heading text-3xl font-bold text-white">
-            Join Our Happy Clients
+            Get Connected With a Broker
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-lg text-white/70">
-            Your perfect loan is waiting. Let us help you find it.
+            Submit a referral enquiry and we&apos;ll introduce you to a licensed broker.
           </p>
           <Button
             asChild
@@ -134,7 +134,7 @@ export default function TestimonialsPage() {
             className="mt-8 bg-gold text-navy font-semibold hover:bg-gold-light"
           >
             <Link href="/apply">
-              Start Your Application <ArrowRight className="ml-2 h-4 w-4" />
+              Request an Introduction <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

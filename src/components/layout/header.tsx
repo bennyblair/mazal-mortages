@@ -58,7 +58,7 @@ export function Header() {
             asChild
             className="bg-gold text-navy font-semibold hover:bg-gold-light"
           >
-            <Link href="/apply">Get Started</Link>
+            <Link href="/apply">Get Introduced</Link>
           </Button>
         </div>
 
@@ -85,7 +85,7 @@ export function Header() {
                 className="mt-4 bg-gold text-navy font-semibold hover:bg-gold-light"
               >
                 <Link href="/apply" onClick={() => setOpen(false)}>
-                  Get Started
+                  Get Introduced
                 </Link>
               </Button>
             </div>

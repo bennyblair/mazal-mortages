@@ -79,7 +79,7 @@ const services = [
   {
     icon: Key,
     title: "First Home Buyers",
-    description: "Navigate your first property purchase with expert guidance.",
+    description: "Get connected with a broker for your first property purchase.",
     color: "bg-amber-500/10 text-amber-600",
   },
   {

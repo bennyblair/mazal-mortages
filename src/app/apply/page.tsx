@@ -14,9 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowRight, ArrowLeft, CheckCircle2, CalendarDays } from "lucide-react";
-
-const steps = ["Personal Details", "Loan Requirements", "Financial Situation", "Review & Submit"];
+import { ArrowRight, CheckCircle2, CalendarDays } from "lucide-react";
 
 interface ConfettiPiece {
   x: number;
@@ -127,11 +125,13 @@ function Confetti({ active }: { active: boolean }) {
 }
 
 export default function ApplyPage() {
-  const [step, setStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [consent, setConsent] = useState(false);
 
-  function handleSubmit() {
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!consent) return;
     setSubmitted(true);
     setShowConfetti(true);
   }
@@ -143,7 +143,7 @@ export default function ApplyPage() {
         <section className="bg-navy py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h1 className="font-heading text-4xl font-bold text-white">
-              Application <span className="text-gold">Submitted</span>
+              Enquiry <span className="text-gold">Submitted</span>
             </h1>
           </div>
         </section>
@@ -154,8 +154,8 @@ export default function ApplyPage() {
               Thank You!
             </h2>
             <p className="mt-4 text-muted-foreground">
-              We&apos;ve received your application and will be in touch within one
-              business day to discuss next steps.
+              We&apos;ve received your referral enquiry and will introduce you to a
+              licensed mortgage broker within one business day.
             </p>
             <div className="mt-8 rounded-xl bg-gold/5 border border-gold/20 p-6">
               <CalendarDays className="mx-auto h-8 w-8 text-gold" />
@@ -163,7 +163,7 @@ export default function ApplyPage() {
                 Want to speed things up?
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Book a call so we can get started right away.
+                Book a call and we&apos;ll arrange your broker introduction sooner.
               </p>
               <Button
                 asChild
@@ -174,6 +174,11 @@ export default function ApplyPage() {
                 </a>
               </Button>
             </div>
+            <p className="mt-6 text-xs text-muted-foreground">
+              Mazal Mortgages is a referral service only. We do not provide credit
+              advice or arrange loans. The broker you are introduced to will assess
+              your needs independently.
+            </p>
           </div>
         </Section>
       </>
@@ -185,227 +190,144 @@ export default function ApplyPage() {
       <section className="bg-navy py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mb-4 font-heading text-sm font-semibold uppercase tracking-widest text-gold">
-            Get Started
+            Get Introduced
           </p>
           <h1 className="font-heading text-4xl font-bold text-white sm:text-5xl">
-            Start Your <span className="text-gold">Application</span>
+            Request a <span className="text-gold">Broker Introduction</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
-            Tell us about yourself and what you&apos;re looking for. This takes
-            about 5 minutes.
+            Tell us a little about yourself and we&apos;ll connect you with a
+            licensed mortgage broker suited to your needs.
           </p>
         </div>
       </section>
 
       <Section>
         <div className="mx-auto max-w-2xl">
-          {/* Progress */}
-          <div className="mb-8 flex items-center justify-between">
-            {steps.map((s, i) => (
-              <div key={s} className="flex items-center gap-2">
-                <div
-                  className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold ${
-                    i <= step
-                      ? "bg-gold text-navy"
-                      : "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  {i + 1}
-                </div>
-                <span className="hidden text-sm font-medium text-navy sm:inline">
-                  {s}
-                </span>
-                {i < steps.length - 1 && (
-                  <div
-                    className={`hidden h-0.5 w-8 sm:block ${
-                      i < step ? "bg-gold" : "bg-muted"
-                    }`}
-                  />
-                )}
-              </div>
-            ))}
-          </div>
-
           <Card className="border-border/60">
             <CardContent className="p-6 sm:p-8">
               <form
-                name="application"
+                name="referral-enquiry"
                 method="POST"
                 data-netlify="true"
-                onSubmit={(e) => {
-                  if (step < steps.length - 1) {
-                    e.preventDefault();
-                    setStep(step + 1);
-                  } else {
-                    e.preventDefault();
-                    handleSubmit();
-                  }
-                }}
+                onSubmit={handleSubmit}
               >
-                <input type="hidden" name="form-name" value="application" />
+                <input type="hidden" name="form-name" value="referral-enquiry" />
 
-                {step === 0 && (
-                  <div className="space-y-5">
-                    <h2 className="font-heading text-xl font-bold text-navy">
-                      Personal Details
-                    </h2>
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div className="space-y-2">
-                        <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" name="firstName" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" name="lastName" required />
-                      </div>
+                <div className="space-y-5">
+                  <h2 className="font-heading text-xl font-bold text-navy">
+                    Your Details
+                  </h2>
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="firstName">First Name</Label>
+                      <Input id="firstName" name="firstName" required />
                     </div>
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div className="space-y-2">
-                        <Label htmlFor="applyEmail">Email</Label>
-                        <Input id="applyEmail" name="email" type="email" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="applyPhone">Phone</Label>
-                        <Input id="applyPhone" name="phone" type="tel" required />
-                      </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="lastName">Last Name</Label>
+                      <Input id="lastName" name="lastName" required />
                     </div>
                   </div>
-                )}
-
-                {step === 1 && (
-                  <div className="space-y-5">
-                    <h2 className="font-heading text-xl font-bold text-navy">
-                      Loan Requirements
-                    </h2>
+                  <div className="grid gap-5 sm:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="loanPurpose">What do you need the loan for?</Label>
-                      <Select name="loanPurpose">
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select purpose" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="purchase">Purchase a property</SelectItem>
-                          <SelectItem value="refinance">Refinance existing loan</SelectItem>
-                          <SelectItem value="investment">Investment property</SelectItem>
-                          <SelectItem value="construction">Construction / renovation</SelectItem>
-                          <SelectItem value="commercial">Commercial property</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div className="space-y-2">
-                        <Label htmlFor="propertyValue">Estimated Property Value</Label>
-                        <Input id="propertyValue" name="propertyValue" type="number" placeholder="e.g. 800000" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="loanAmountNeeded">Loan Amount Needed</Label>
-                        <Input id="loanAmountNeeded" name="loanAmount" type="number" placeholder="e.g. 640000" />
-                      </div>
+                      <Label htmlFor="applyEmail">Email</Label>
+                      <Input id="applyEmail" name="email" type="email" required />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="timeline">When do you need the loan?</Label>
-                      <Select name="timeline">
+                      <Label htmlFor="applyPhone">Phone</Label>
+                      <Input id="applyPhone" name="phone" type="tel" required />
+                    </div>
+                  </div>
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="suburb">Suburb</Label>
+                      <Input id="suburb" name="suburb" placeholder="e.g. Richmond" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="state">State</Label>
+                      <Select name="state">
                         <SelectTrigger>
-                          <SelectValue placeholder="Select timeline" />
+                          <SelectValue placeholder="Select state" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="asap">As soon as possible</SelectItem>
-                          <SelectItem value="1-3months">1–3 months</SelectItem>
-                          <SelectItem value="3-6months">3–6 months</SelectItem>
-                          <SelectItem value="exploring">Just exploring options</SelectItem>
+                          <SelectItem value="VIC">VIC</SelectItem>
+                          <SelectItem value="NSW">NSW</SelectItem>
+                          <SelectItem value="QLD">QLD</SelectItem>
+                          <SelectItem value="WA">WA</SelectItem>
+                          <SelectItem value="SA">SA</SelectItem>
+                          <SelectItem value="TAS">TAS</SelectItem>
+                          <SelectItem value="ACT">ACT</SelectItem>
+                          <SelectItem value="NT">NT</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                   </div>
-                )}
-
-                {step === 2 && (
-                  <div className="space-y-5">
-                    <h2 className="font-heading text-xl font-bold text-navy">
-                      Financial Situation
-                    </h2>
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div className="space-y-2">
-                        <Label htmlFor="income">Annual Income (before tax)</Label>
-                        <Input id="income" name="income" type="number" placeholder="e.g. 120000" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="employment">Employment Type</Label>
-                        <Select name="employment">
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select type" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="fulltime">Full-time (PAYG)</SelectItem>
-                            <SelectItem value="parttime">Part-time / casual</SelectItem>
-                            <SelectItem value="selfemployed">Self-employed</SelectItem>
-                            <SelectItem value="contractor">Contractor</SelectItem>
-                            <SelectItem value="retired">Retired</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div className="space-y-2">
-                        <Label htmlFor="savings">Savings / Deposit Available</Label>
-                        <Input id="savings" name="savings" type="number" placeholder="e.g. 150000" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="debts">Existing Debts (total)</Label>
-                        <Input id="debts" name="debts" type="number" placeholder="e.g. 20000" />
-                      </div>
-                    </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="enquiryType">What are you looking for?</Label>
+                    <Select name="enquiryType">
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select an option" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="home-loan">Home loan</SelectItem>
+                        <SelectItem value="investment-loan">Investment loan</SelectItem>
+                        <SelectItem value="refinancing">Refinancing</SelectItem>
+                        <SelectItem value="first-home">First home buyer assistance</SelectItem>
+                        <SelectItem value="commercial">Commercial loan</SelectItem>
+                        <SelectItem value="construction">Construction loan</SelectItem>
+                        <SelectItem value="other">Other / not sure</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
-                )}
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message (optional)</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      rows={3}
+                      placeholder="Briefly describe your situation or any questions you'd like the broker to address."
+                    />
+                  </div>
 
-                {step === 3 && (
-                  <div className="space-y-5">
-                    <h2 className="font-heading text-xl font-bold text-navy">
-                      Review & Submit
-                    </h2>
-                    <p className="text-muted-foreground">
-                      Please review the information you&apos;ve provided. Add any
-                      additional notes below, then submit your application.
-                    </p>
-                    <div className="space-y-2">
-                      <Label htmlFor="notes">Additional Notes (optional)</Label>
-                      <Textarea
-                        id="notes"
-                        name="notes"
-                        rows={4}
-                        placeholder="Anything else you'd like us to know?"
+                  {/* Consent checkbox */}
+                  <div className="rounded-lg border border-border/60 bg-muted/30 p-4">
+                    <label className="flex items-start gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="consent"
+                        checked={consent}
+                        onChange={(e) => setConsent(e.target.checked)}
+                        className="mt-1 h-4 w-4 rounded border-gray-300 accent-gold"
+                        required
                       />
-                    </div>
+                      <span className="text-sm text-muted-foreground leading-relaxed">
+                        I consent to Mazal Mortgages sharing my details and enquiry
+                        information with a licensed mortgage broker, and understand
+                        Mazal Mortgages may receive a referral fee. I have read and
+                        agree to the{" "}
+                        <a href="/privacy" className="text-gold underline">
+                          Privacy Policy
+                        </a>
+                        .
+                      </span>
+                    </label>
                   </div>
-                )}
 
-                {/* Nav buttons */}
-                <div className="mt-8 flex justify-between">
-                  {step > 0 ? (
-                    <Button
-                      type="button"
-                      variant="outline"
-                      onClick={() => setStep(step - 1)}
-                    >
-                      <ArrowLeft className="mr-2 h-4 w-4" />
-                      Back
-                    </Button>
-                  ) : (
-                    <div />
-                  )}
                   <Button
                     type="submit"
-                    className="bg-gold text-navy font-semibold hover:bg-gold-light"
+                    disabled={!consent}
+                    className="w-full bg-gold text-navy font-semibold hover:bg-gold-light disabled:opacity-50"
                   >
-                    {step < steps.length - 1 ? (
-                      <>
-                        Next <ArrowRight className="ml-2 h-4 w-4" />
-                      </>
-                    ) : (
-                      "Submit Application"
-                    )}
+                    Submit Referral Enquiry
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
+
+                  <p className="text-xs text-center text-muted-foreground">
+                    Mazal Mortgages is a referral service only. We do not provide
+                    credit advice, assess loan applications, or arrange credit
+                    contracts. The broker you are introduced to operates
+                    independently under their own Australian Credit Licence.
+                  </p>
                 </div>
               </form>
             </CardContent>

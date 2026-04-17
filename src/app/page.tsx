@@ -41,65 +41,65 @@ const services = [
   {
     icon: Home,
     title: "Home Loans",
-    description: "Find the perfect loan for your dream home with competitive rates and flexible terms.",
+    description: "Get introduced to a licensed broker who can help you find competitive home loan options.",
     href: "/services#home-loans",
   },
   {
     icon: TrendingUp,
     title: "Investment Loans",
-    description: "Grow your portfolio with tailored investment lending solutions.",
+    description: "Connect with a broker experienced in investment lending and portfolio structuring.",
     href: "/services#investment",
   },
   {
     icon: RefreshCw,
     title: "Refinancing",
-    description: "Switch to a better deal and potentially save thousands over the life of your loan.",
+    description: "We can refer you to a broker who specialises in reviewing existing loans for better deals.",
     href: "/services#refinancing",
   },
   {
     icon: Key,
     title: "First Home Buyers",
-    description: "Navigate the journey to your first home with expert guidance and grant access.",
+    description: "Be connected with a broker who understands first home buyer grants and schemes.",
     href: "/services#first-home",
   },
   {
     icon: Building2,
     title: "Commercial Loans",
-    description: "Finance your business property with solutions designed for commercial needs.",
+    description: "Request an introduction to a broker with commercial lending expertise.",
     href: "/services#commercial",
   },
   {
     icon: HardHat,
     title: "Construction Loans",
-    description: "Build your vision with progress-draw construction financing.",
+    description: "Get connected with a broker experienced in progress-draw construction financing.",
     href: "/services#construction",
   },
 ];
 
 const trustPoints = [
-  { icon: Shield, title: "Licensed & Accredited", description: "Fully licensed Australian Credit Licence holder" },
-  { icon: Clock, title: "Fast Approvals", description: "Pre-approvals in as little as 24 hours" },
-  { icon: Users, title: "50+ Lenders", description: "Access to Australia's widest panel of lenders" },
-  { icon: CheckCircle2, title: "$500M+ Settled", description: "Half a billion in loans settled for our clients" },
+  { icon: Shield, title: "Licensed Brokers", description: "We only refer you to fully licensed Australian mortgage brokers" },
+  { icon: Clock, title: "Fast Introductions", description: "Receive a broker introduction within 24 hours" },
+  { icon: Users, title: "Trusted Network", description: "A curated network of experienced mortgage professionals" },
+  { icon: CheckCircle2, title: "No Cost to You", description: "Our referral service is completely free for borrowers" },
 ];
 
 const testimonials = [
   {
-    quote: "Mazal Mortgages made the entire process seamless. Their expertise saved us over $40,000 in interest.",
+    quote: "Mazal connected us with an amazing broker who saved us over $40,000 in interest. So glad we used the referral service.",
     name: "Sarah & David Chen",
-    type: "Home Loan",
+    type: "Home Loan Referral",
     rating: 5,
   },
   {
-    quote: "As a first home buyer, I was overwhelmed. The team guided me through every step with patience and professionalism.",
+    quote: "As a first home buyer, I had no idea where to start. Mazal introduced me to a broker who was patient and knowledgeable.",
     name: "James Morrison",
-    type: "First Home Buyer",
+    type: "First Home Buyer Referral",
     rating: 5,
   },
   {
-    quote: "They restructured our investment portfolio loans and unlocked equity we didn't know we had.",
+    quote: "The broker Mazal referred us to restructured our investment loans brilliantly. Great referral service.",
     name: "Priya Patel",
-    type: "Investment Loan",
+    type: "Investment Loan Referral",
     rating: 5,
   },
 ];
@@ -205,7 +205,7 @@ export default function HomePage() {
         <div className="relative z-10 mt-6 text-center">
           {stage >= 3 ? (
             <p className="subtitle-entrance mx-auto max-w-xl text-lg text-white/70 sm:text-xl">
-              Premium mortgage broking with a personal touch. Your home loan, expertly crafted.
+              Connect with a licensed mortgage broker. Your home loan journey starts here.
             </p>
           ) : (
             <p className="mx-auto max-w-xl text-lg text-transparent sm:text-xl">placeholder</p>
@@ -218,7 +218,7 @@ export default function HomePage() {
               <div className="button-entrance" style={{ animationDelay: "0s" }}>
                 <Button asChild size="lg" className="bg-gold text-navy font-semibold hover:bg-gold-light text-base px-8">
                   <Link href="/apply">
-                    Start Your Application <ArrowRight className="ml-2 h-4 w-4" />
+                    Request a Broker Introduction <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </div>
@@ -236,7 +236,7 @@ export default function HomePage() {
         <div className="relative z-10 mt-12">
           {stage >= 5 ? (
             <p className="typewriter-text text-sm font-medium uppercase tracking-[0.3em] text-gold/80">
-              Licensed &bull; Accredited &bull; 50+ Lenders &bull; $500M+ Settled
+              Referral Service &bull; Licensed Brokers &bull; Free for Borrowers
             </p>
           ) : (
             <p className="text-sm text-transparent">placeholder</p>
@@ -269,8 +269,8 @@ export default function HomePage() {
       <Section>
         <ScrollReveal animation="fade-up">
           <SectionHeader
-            title="Our Services"
-            subtitle="Comprehensive mortgage solutions for every stage of your property journey"
+            title="How We Help"
+            subtitle="We connect you with licensed brokers for every stage of your property journey"
           />
         </ScrollReveal>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -306,7 +306,7 @@ export default function HomePage() {
         <ScrollReveal animation="fade-up">
           <SectionHeader
             title="What Our Clients Say"
-            subtitle="Real stories from clients who trusted us with their biggest financial decisions"
+            subtitle="Real stories from people who used our referral service"
           />
         </ScrollReveal>
         <div className="grid gap-6 md:grid-cols-3">
@@ -345,11 +345,11 @@ export default function HomePage() {
         <ScrollReveal animation="zoom-in">
         <div className="text-center">
           <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
-            Ready to Find Your <span className="text-gold">Perfect Loan</span>?
+            Ready to Speak With a <span className="text-gold">Licensed Broker</span>?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">
-            Book a free consultation with one of our mortgage experts today. No
-            obligation, no pressure — just expert advice.
+            Submit a referral enquiry and we&apos;ll introduce you to a licensed mortgage
+            broker — no obligation, completely free.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
@@ -358,7 +358,7 @@ export default function HomePage() {
               className="bg-gold text-navy font-semibold hover:bg-gold-light text-base px-8"
             >
               <Link href="/apply">
-                Start Your Application
+                Request an Introduction
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -368,7 +368,7 @@ export default function HomePage() {
               size="lg"
               className="border-white/20 text-white hover:bg-white/10 text-base px-8"
             >
-              <Link href="/contact">Book a Consultation</Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>

@@ -17,7 +17,7 @@ const footerLinks = {
     { href: "/blog", label: "Resources" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact" },
-    { href: "/apply", label: "Apply Now" },
+    { href: "/apply", label: "Request Introduction" },
   ],
   tools: [
     { href: "/calculator", label: "Mortgage Calculator" },
@@ -42,8 +42,9 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-white/60">
-              Expert mortgage guidance tailored to your financial goals. We make
-              the complex simple.
+              Mazal Mortgages is a referral service that connects you with
+              licensed Australian mortgage brokers. We do not provide credit
+              advice or arrange loans.
             </p>
             <div className="space-y-2 pt-2">
               <a
@@ -130,7 +131,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-white/40 sm:flex-row">
           <p>&copy; {new Date().getFullYear()} Mazal Mortgages. All rights reserved.</p>
           <p>
-            Australian Credit Licence No. 000000 | ABN 00 000 000 000
+            Mazal Mortgages is a referral service only. We introduce users to licensed mortgage brokers and may receive a referral fee. No credit advice or loan recommendations are provided.
           </p>
         </div>
       </div>

@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Resources & Blog | Mazal Mortgages",
-  description: "Expert guides, market updates, and tips to help you make smarter mortgage decisions.",
+  description: "Helpful guides, market updates, and tips to learn about the mortgage process.",
 };
 
 const posts = [
@@ -24,7 +24,7 @@ const posts = [
   {
     slug: "fixed-vs-variable-rates",
     title: "Fixed vs Variable: Which Rate Type Is Right for You?",
-    excerpt: "We break down the pros and cons of fixed and variable rates to help you make an informed decision for your mortgage.",
+    excerpt: "A look at the pros and cons of fixed and variable rates to help you understand your options before speaking with a broker.",
     category: "Tips",
     readTime: "5 min read",
     date: "February 2026",
@@ -59,7 +59,7 @@ export default function BlogPage() {
             Guides & <span className="text-gold">Insights</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
-            Expert knowledge to help you make smarter mortgage decisions.
+            Helpful knowledge to prepare you for speaking with a mortgage broker.
           </p>
         </div>
       </section>

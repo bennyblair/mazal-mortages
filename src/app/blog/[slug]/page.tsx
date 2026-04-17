@@ -43,9 +43,9 @@ Several programs exist to help first home buyers:
 - Keep your employment stable during the application process
 - Get a building and pest inspection before committing
 
-## How We Can Help
+## How a Broker Can Help
 
-At Mazal Mortgages, we specialise in guiding first home buyers through every step. From finding the best rate to accessing every grant you're eligible for, we make the process simple.
+A licensed mortgage broker can guide first home buyers through every step — from finding competitive rates to accessing every grant available. Mazal Mortgages can introduce you to a broker who specialises in first home buyer lending.
     `,
   },
   "fixed-vs-variable-rates": {
@@ -88,9 +88,9 @@ A fixed rate locks in your interest rate for a set period (typically 1–5 years
 
 Many borrowers choose to split their loan — for example, 60% variable and 40% fixed. This gives you some rate certainty while maintaining flexibility on the variable portion.
 
-## Our Recommendation
+## Our Suggestion
 
-There's no one-size-fits-all answer. The right choice depends on your financial goals, risk tolerance, and life plans. We recommend speaking with a broker who can model different scenarios for your specific situation.
+There's no one-size-fits-all answer. The right choice depends on your financial goals, risk tolerance, and life plans. A licensed broker can model different scenarios for your specific situation. Request a free broker introduction through Mazal Mortgages.
     `,
   },
   "refinancing-checklist": {
@@ -136,9 +136,9 @@ When calculating whether to refinance, factor in:
 - **Break costs** if you're on a fixed rate (can be thousands)
 - **Government fees** for mortgage registration
 
-## How We Make It Easy
+## How a Broker Can Help
 
-At Mazal Mortgages, we offer a free loan health check. We'll review your current loan, compare it against the market, and calculate the exact savings — including all switching costs — so you can make an informed decision.
+A licensed mortgage broker can review your current loan, compare it against the market, and calculate exact savings — including all switching costs. Mazal Mortgages can introduce you to a broker who specialises in refinancing.
     `,
   },
   "investment-property-tax-benefits": {
@@ -182,9 +182,9 @@ If you hold the property for more than 12 months, you're eligible for a 50% CGT 
 
 Tax laws are complex and change frequently. Always consult a qualified tax professional for advice specific to your situation. This article is general information only.
 
-## How We Can Help
+## How a Broker Can Help
 
-At Mazal Mortgages, we structure investment loans to maximise your tax efficiency while keeping your overall portfolio healthy. Book a consultation to discuss your investment strategy.
+A licensed mortgage broker experienced in investment lending can structure your loans to support your tax strategy while keeping your overall portfolio healthy. Request a broker introduction through Mazal Mortgages to discuss your investment plans.
     `,
   },
 };
@@ -248,17 +248,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         <div className="mx-auto mt-16 max-w-3xl rounded-xl bg-gold/5 border border-gold/20 p-8 text-center">
           <h3 className="font-heading text-2xl font-bold text-navy">
-            Need Expert Advice?
+            Want to Speak With a Broker?
           </h3>
           <p className="mt-2 text-muted-foreground">
-            Our brokers can help you apply what you&apos;ve learned to your own situation.
+            We can introduce you to a licensed broker who can help with your situation.
           </p>
           <Button
             asChild
             className="mt-6 bg-gold text-navy font-semibold hover:bg-gold-light"
           >
-            <Link href="/contact">
-              Book a Consultation <ArrowRight className="ml-2 h-4 w-4" />
+            <Link href="/apply">
+              Request an Introduction <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

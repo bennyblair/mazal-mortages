@@ -235,8 +235,8 @@ export default function HomeAltPage() {
         <div className="relative z-10 mt-6 text-center">
           {stage >= 3 ? (
             <p className="subtitle-entrance mx-auto max-w-xl text-lg text-white/70 sm:text-xl">
-              Premium mortgage broking with a personal touch.
-              Your home loan, expertly crafted.
+              Connect with a licensed mortgage broker.
+              Your home loan journey starts here.
             </p>
           ) : (
             <p className="mx-auto max-w-xl text-lg text-transparent sm:text-xl">
@@ -256,7 +256,7 @@ export default function HomeAltPage() {
                   className="bg-gold text-navy font-semibold hover:bg-gold-light text-base px-8"
                 >
                   <Link href="/apply">
-                    Start Your Application
+                    Request a Broker Introduction
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -281,7 +281,7 @@ export default function HomeAltPage() {
         <div className="relative z-10 mt-12">
           {stage >= 5 ? (
             <p className="typewriter-text text-sm font-medium uppercase tracking-[0.3em] text-gold/80">
-              Licensed &bull; Accredited &bull; 50+ Lenders &bull; $500M+ Settled
+              Referral Service &bull; Licensed Brokers &bull; Free for Borrowers
             </p>
           ) : (
             <p className="text-sm text-transparent">placeholder</p>

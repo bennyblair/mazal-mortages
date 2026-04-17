@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mazal Mortgages | Premium Mortgage Broking",
+  title: "Mazal Mortgages | Connect With a Licensed Mortgage Broker",
   description:
-    "Expert mortgage broking services tailored to your financial goals. Home loans, investment loans, refinancing, and more.",
+    "Mazal Mortgages is a referral service that connects you with licensed Australian mortgage brokers. Home loans, investment loans, refinancing, and more.",
 };
 
 export default function RootLayout({

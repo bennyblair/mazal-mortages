@@ -27,7 +27,7 @@ export default function ContactPage() {
             Contact <span className="text-gold">Us</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
-            Have a question or ready to get started? Reach out and we&apos;ll get
+            Have a question about our referral service? Reach out and we&apos;ll get
             back to you within one business day.
           </p>
         </div>
@@ -78,19 +78,19 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="loanType">Loan Type</Label>
+                      <Label htmlFor="loanType">Enquiry Type</Label>
                       <Select name="loanType">
                         <SelectTrigger>
-                          <SelectValue placeholder="Select a loan type" />
+                          <SelectValue placeholder="What can we help with?" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="home">Home Loan</SelectItem>
-                          <SelectItem value="investment">Investment Loan</SelectItem>
-                          <SelectItem value="refinance">Refinancing</SelectItem>
-                          <SelectItem value="first-home">First Home Buyer</SelectItem>
-                          <SelectItem value="commercial">Commercial Loan</SelectItem>
-                          <SelectItem value="construction">Construction Loan</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="home">Home Loan Referral</SelectItem>
+                          <SelectItem value="investment">Investment Loan Referral</SelectItem>
+                          <SelectItem value="refinance">Refinancing Referral</SelectItem>
+                          <SelectItem value="first-home">First Home Buyer Referral</SelectItem>
+                          <SelectItem value="commercial">Commercial Loan Referral</SelectItem>
+                          <SelectItem value="construction">Construction Loan Referral</SelectItem>
+                          <SelectItem value="general">General Enquiry</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -155,8 +155,8 @@ export default function ContactPage() {
                   </h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Prefer to chat? Schedule a free 30-minute consultation at a
-                  time that suits you.
+                  Prefer to chat? Schedule a free call to discuss how our
+                  referral service works.
                 </p>
                 <Button
                   asChild

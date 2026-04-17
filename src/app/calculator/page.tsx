@@ -248,7 +248,7 @@ export default function CalculatorPage() {
                     Want a personalised quote?
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    This is an estimate. Speak to a broker for accurate figures.
+                    This is an estimate only. Speak to a licensed broker for accurate figures.
                   </p>
                 </div>
                 <Button
@@ -256,7 +256,7 @@ export default function CalculatorPage() {
                   className="bg-gold text-navy font-semibold hover:bg-gold-light shrink-0"
                 >
                   <Link href="/apply">
-                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                    Get Introduced <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardContent>
@@ -437,7 +437,8 @@ export default function CalculatorPage() {
                 <p className="text-xs font-medium text-muted-foreground">
                   ⚠️ This is an indicative estimate only. Actual borrowing capacity depends on 
                   your full financial profile, credit history, and lender criteria. Assessment uses 
-                  a +3% buffer rate per APRA guidelines. Speak to us for an accurate figure.
+                  a +3% buffer rate per APRA guidelines. Speak to a licensed broker for an accurate figure. 
+                  Mazal Mortgages does not provide credit advice.
                 </p>
               </CardContent>
             </Card>

@@ -177,7 +177,7 @@ export default function ParticlesExamplePage() {
             className="bg-gold text-navy font-semibold hover:bg-gold-light text-base px-8"
           >
             <Link href="/apply">
-              Start Your Application <ArrowRight className="ml-2 h-4 w-4" />
+              Request a Broker Introduction <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
           <Button

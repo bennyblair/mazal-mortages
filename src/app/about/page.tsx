@@ -10,47 +10,47 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us | Mazal Mortgages",
-  description: "Learn about Mazal Mortgages — our story, mission, and the experienced team behind your mortgage success.",
+  description: "Learn about Mazal Mortgages — a referral service connecting Australians with licensed mortgage brokers.",
 };
 
 const values = [
   {
     icon: Target,
     title: "Client-First Approach",
-    description: "Every recommendation we make is driven by what's best for you, not commission structures.",
+    description: "Every referral we make is driven by what's best for you, connecting you with the right broker.",
   },
   {
     icon: Heart,
     title: "Transparency",
-    description: "No hidden fees, no surprises. We explain every detail in plain language.",
+    description: "We clearly disclose our role as a referral service and any fees involved.",
   },
   {
     icon: Handshake,
-    title: "Long-Term Relationships",
-    description: "We don't just close loans — we build partnerships that last beyond settlement.",
+    title: "Trusted Connections",
+    description: "We only refer to licensed, reputable mortgage brokers with proven track records.",
   },
   {
     icon: Award,
-    title: "Excellence",
-    description: "We continuously refine our expertise to deliver the highest standard of service.",
+    title: "Simplicity",
+    description: "We make it easy to get connected with the right professional for your needs.",
   },
 ];
 
 const team = [
   {
     name: "Daniel Mazal",
-    role: "Founder & Senior Broker",
-    bio: "With over 15 years in the finance industry, Daniel founded Mazal Mortgages to deliver a more personalised approach to lending.",
+    role: "Founder",
+    bio: "With years of experience in the finance industry, Daniel founded Mazal Mortgages to help Australians connect with the right mortgage broker — simply and transparently.",
   },
   {
     name: "Rebecca Liu",
-    role: "Senior Mortgage Broker",
-    bio: "Rebecca specialises in investment lending and portfolio structuring, helping clients build wealth through property.",
+    role: "Client Relations Manager",
+    bio: "Rebecca ensures every client is matched with a broker who understands their unique situation and goals.",
   },
   {
     name: "Michael Torres",
-    role: "First Home Buyer Specialist",
-    bio: "Michael is passionate about helping first-time buyers navigate grants, schemes, and the path to homeownership.",
+    role: "Partnerships Manager",
+    bio: "Michael manages our network of licensed brokers, ensuring every professional in our network meets our high standards.",
   },
 ];
 
@@ -65,11 +65,11 @@ export default function AboutPage() {
           </p>
           <h1 className="font-heading text-4xl font-bold text-white sm:text-5xl">
             Built on Trust,{" "}
-            <span className="text-gold">Driven by Results</span>
+            <span className="text-gold">Driven by Connections</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
-            We&apos;re a team of experienced mortgage professionals dedicated to
-            finding the right loan for every client — not just any loan.
+            We&apos;re a referral service dedicated to connecting Australians
+            with licensed mortgage brokers who can help with their lending needs.
           </p>
         </div>
       </section>
@@ -83,18 +83,19 @@ export default function AboutPage() {
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 Mazal Mortgages was founded with a simple belief: every Australian
-                deserves access to expert mortgage advice, not just those who know
-                the right people.
+                deserves easy access to a quality mortgage broker, not just those
+                who know the right people.
               </p>
               <p>
-                After years working within the major banks, our founder saw
-                first-hand how clients were being steered towards products that
-                benefited the institution, not the borrower. Mazal Mortgages was
-                created to change that.
+                After years working in the finance industry, our founder saw how
+                difficult it can be for everyday Australians to find a trustworthy
+                broker. Mazal Mortgages was created to bridge that gap.
               </p>
               <p>
-                Today, we work with over 50 lenders to find the best possible deal
-                for each client. Our independence means our only loyalty is to you.
+                Today, we operate as a referral service, connecting borrowers with
+                licensed mortgage brokers from our curated network. We don&apos;t
+                provide credit advice or arrange loans — we simply make the right
+                introduction.
               </p>
             </div>
           </div>
@@ -103,20 +104,20 @@ export default function AboutPage() {
           <div className="rounded-2xl bg-navy/5 p-8 lg:p-12">
             <div className="grid grid-cols-2 gap-8 text-center">
               <div>
-                <AnimatedCounter end={15} suffix="+" className="font-heading text-4xl font-bold text-gold" />
-                <p className="mt-1 text-sm text-muted-foreground">Years Experience</p>
+                <AnimatedCounter end={1000} suffix="+" className="font-heading text-4xl font-bold text-gold" />
+                <p className="mt-1 text-sm text-muted-foreground">Referrals Made</p>
               </div>
               <div>
                 <AnimatedCounter end={50} suffix="+" className="font-heading text-4xl font-bold text-gold" />
-                <p className="mt-1 text-sm text-muted-foreground">Lender Partners</p>
+                <p className="mt-1 text-sm text-muted-foreground">Broker Partners</p>
               </div>
               <div>
-                <AnimatedCounter end={500} prefix="$" suffix="M+" className="font-heading text-4xl font-bold text-gold" />
-                <p className="mt-1 text-sm text-muted-foreground">Loans Settled</p>
+                <AnimatedCounter end={98} suffix="%" className="font-heading text-4xl font-bold text-gold" />
+                <p className="mt-1 text-sm text-muted-foreground">Client Satisfaction</p>
               </div>
               <div>
-                <AnimatedCounter end={2000} suffix="+" className="font-heading text-4xl font-bold text-gold" />
-                <p className="mt-1 text-sm text-muted-foreground">Happy Clients</p>
+                <AnimatedCounter end={24} suffix="hr" className="font-heading text-4xl font-bold text-gold" />
+                <p className="mt-1 text-sm text-muted-foreground">Avg. Introduction Time</p>
               </div>
             </div>
           </div>
@@ -151,7 +152,7 @@ export default function AboutPage() {
       {/* Team */}
       <Section>
         <ScrollReveal animation="fade-up">
-          <SectionHeader title="Meet the Team" subtitle="Experienced professionals ready to help you achieve your goals" />
+          <SectionHeader title="Meet the Team" subtitle="The people behind your broker introduction" />
         </ScrollReveal>
         <div className="grid gap-8 md:grid-cols-3">
           {team.map((member, i) => (
@@ -176,18 +177,18 @@ export default function AboutPage() {
         <ScrollReveal animation="zoom-in">
         <div className="text-center">
           <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
-            Ready to Work With Us?
+            Ready to Get Connected?
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-lg text-white/70">
-            Get in touch for a free, no-obligation consultation.
+            Request a free broker introduction — no obligation.
           </p>
           <Button
             asChild
             size="lg"
             className="mt-8 bg-gold text-navy font-semibold hover:bg-gold-light"
           >
-            <Link href="/contact">
-              Book a Consultation <ArrowRight className="ml-2 h-4 w-4" />
+            <Link href="/apply">
+              Request an Introduction <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

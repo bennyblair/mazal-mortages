@@ -18,7 +18,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Services | Mazal Mortgages",
-  description: "Explore our full range of mortgage services — home loans, investment loans, refinancing, first home buyer assistance, commercial and construction finance.",
+  description: "Explore the types of mortgage brokers we can connect you with — home loans, investment loans, refinancing, first home buyer assistance, commercial and construction finance.",
 };
 
 const services = [
@@ -26,47 +26,47 @@ const services = [
     id: "home-loans",
     icon: Home,
     title: "Home Loans",
-    description: "Whether you're upgrading, downsizing, or buying your forever home, we'll find the right loan from our panel of 50+ lenders.",
+    description: "Whether you're upgrading, downsizing, or buying your forever home, we can introduce you to a licensed broker who specialises in residential lending.",
     features: [
-      "Variable and fixed rate options",
-      "Offset accounts and redraw facilities",
-      "Split loan structures",
-      "Pre-approval in 24 hours",
+      "Brokers with access to variable and fixed rate options",
+      "Specialists in offset accounts and redraw facilities",
+      "Experience with split loan structures",
+      "Fast pre-approval turnaround",
     ],
   },
   {
     id: "investment",
     icon: TrendingUp,
     title: "Investment Loans",
-    description: "Build your property portfolio with lending structures designed to maximise your returns and tax benefits.",
+    description: "Get connected with a broker experienced in investment lending and portfolio structuring.",
     features: [
-      "Interest-only repayment options",
-      "Portfolio structuring advice",
+      "Brokers experienced with interest-only options",
+      "Portfolio structuring expertise",
       "Equity release strategies",
-      "SMSF lending",
+      "SMSF lending specialists",
     ],
   },
   {
     id: "refinancing",
     icon: RefreshCw,
     title: "Refinancing",
-    description: "Already have a mortgage? We'll review your current loan and find opportunities to save — often tens of thousands over the life of the loan.",
+    description: "Already have a mortgage? We can refer you to a broker who specialises in reviewing existing loans for potential savings.",
     features: [
-      "Free loan health check",
-      "Rate negotiation with your current lender",
-      "Debt consolidation options",
-      "Cash-out refinancing",
+      "Loan review and comparison expertise",
+      "Rate negotiation experience",
+      "Debt consolidation specialists",
+      "Cash-out refinancing options",
     ],
   },
   {
     id: "first-home",
     icon: Key,
     title: "First Home Buyers",
-    description: "Buying your first home is exciting but overwhelming. We simplify the process and help you access every grant and concession available.",
+    description: "Buying your first home is exciting but can be overwhelming. We connect you with brokers who understand first home buyer grants and schemes.",
     features: [
-      "First Home Owner Grant guidance",
-      "Stamp duty concession advice",
-      "Low-deposit options (as little as 5%)",
+      "First Home Owner Grant expertise",
+      "Stamp duty concession knowledge",
+      "Low-deposit lending specialists",
       "Step-by-step support from search to settlement",
     ],
   },
@@ -74,24 +74,24 @@ const services = [
     id: "commercial",
     icon: Building2,
     title: "Commercial Loans",
-    description: "Finance your business premises, retail space, or commercial investment with flexible lending solutions.",
+    description: "Need finance for business premises or commercial investment? We can introduce you to a broker with commercial lending expertise.",
     features: [
-      "Owner-occupied business finance",
-      "Commercial investment lending",
+      "Owner-occupied business finance specialists",
+      "Commercial investment lending experience",
       "Lease-doc and low-doc options",
-      "Competitive commercial rates",
+      "Competitive commercial rate access",
     ],
   },
   {
     id: "construction",
     icon: HardHat,
     title: "Construction Loans",
-    description: "Building from the ground up? Our construction loan specialists manage the complexity of progress-draw financing.",
+    description: "Building from the ground up? We refer you to brokers experienced in progress-draw construction financing.",
     features: [
-      "Progress payment management",
-      "Fixed-price and cost-plus contracts",
-      "Land and build packages",
-      "Owner-builder finance",
+      "Progress payment management expertise",
+      "Fixed-price and cost-plus contract experience",
+      "Land and build package specialists",
+      "Owner-builder finance knowledge",
     ],
   },
 ];
@@ -106,12 +106,12 @@ export default function ServicesPage() {
             Our Services
           </p>
           <h1 className="font-heading text-4xl font-bold text-white sm:text-5xl">
-            Mortgage Solutions for{" "}
+            Broker Introductions for{" "}
             <span className="text-gold">Every Need</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
-            From your first home to a commercial empire — we have the expertise
-            and lender access to make it happen.
+            From your first home to a commercial investment — we connect you
+            with a licensed broker who has the right expertise.
           </p>
         </div>
       </section>
@@ -140,7 +140,7 @@ export default function ServicesPage() {
                 className="mt-6 bg-gold text-navy font-semibold hover:bg-gold-light"
               >
                 <Link href="/apply">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  Request Introduction <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -174,11 +174,11 @@ export default function ServicesPage() {
       <Section className="bg-navy">
         <div className="text-center">
           <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
-            Not Sure Which Loan Is Right?
+            Not Sure What You Need?
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-lg text-white/70">
-            Book a free consultation and we&apos;ll help you find the best solution
-            for your situation.
+            Submit a referral enquiry and we&apos;ll connect you with a broker
+            who can help with your specific situation.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
@@ -186,7 +186,7 @@ export default function ServicesPage() {
               size="lg"
               className="bg-gold text-navy font-semibold hover:bg-gold-light"
             >
-              <Link href="/contact">Book a Consultation</Link>
+              <Link href="/apply">Request an Introduction</Link>
             </Button>
             <Button
               asChild
