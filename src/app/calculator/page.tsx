@@ -36,13 +36,17 @@ function calculateBorrowingPower(
   interestRate: number,
   loanTerm: number
 ) {
-  // Simplified serviceability calculation
-  // Banks typically use ~30% of gross income minus commitments
-  const assessmentRate = interestRate; // Use the entered rate directly
-  const monthlyIncome = (income + otherIncome) / 12;
-  const monthlyAvailable = monthlyIncome * 0.3 - expenses - existingRepayments;
+  // Serviceability: net income surplus method (closer to major bank models)
+  // Tax approximation for Australian brackets
+  const grossAnnual = income + otherIncome;
+  const tax = estimateTax(grossAnnual);
+  const netMonthly = (grossAnnual - tax) / 12;
+  // Available for repayments: net income minus living expenses and existing debts
+  const monthlyAvailable = netMonthly - expenses - existingRepayments;
   if (monthlyAvailable <= 0) return 0;
 
+  // Assessment rate: entered rate + 3% buffer (APRA standard)
+  const assessmentRate = interestRate + 3;
   const monthlyRate = assessmentRate / 100 / 12;
   const numPayments = loanTerm * 12;
   // Reverse the repayment formula to get principal
@@ -51,6 +55,15 @@ function calculateBorrowingPower(
     (monthlyRate * Math.pow(1 + monthlyRate, numPayments));
 
   return Math.max(0, Math.round(borrowingPower / 1000) * 1000);
+}
+
+function estimateTax(income: number): number {
+  // Simplified 2025-26 Australian tax brackets
+  if (income <= 18200) return 0;
+  if (income <= 45000) return (income - 18200) * 0.16;
+  if (income <= 135000) return 4288 + (income - 45000) * 0.30;
+  if (income <= 190000) return 31288 + (income - 135000) * 0.37;
+  return 51638 + (income - 190000) * 0.45;
 }
 
 export default function CalculatorPage() {
@@ -386,7 +399,7 @@ export default function CalculatorPage() {
                 <p className="mt-2 font-heading text-5xl font-bold">
                   {formatCurrency(borrowingPower)}
                 </p>
-                <p className="mt-1 text-sm text-white/50">based on a {bpRate}% assessment rate</p>
+                <p className="mt-1 text-sm text-white/50">assessed at {bpRate}% + 3% APRA buffer</p>
 
                 {/* Visual gauge */}
                 <div className="mt-6">
@@ -436,8 +449,8 @@ export default function CalculatorPage() {
               <CardContent className="p-6">
                 <p className="text-xs font-medium text-muted-foreground">
                   ⚠️ This is an indicative estimate only. Actual borrowing capacity depends on 
-                  your full financial profile, credit history, and lender criteria. 
-                  Speak to a licensed broker for an accurate figure. 
+                  your full financial profile, credit history, and lender criteria. Assessment includes 
+                  a +3% buffer rate per APRA guidelines. Speak to a licensed broker for an accurate figure. 
                   Mazal Mortgages does not provide credit advice.
                 </p>
               </CardContent>
