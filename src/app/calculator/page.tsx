@@ -38,7 +38,7 @@ function calculateBorrowingPower(
 ) {
   // Simplified serviceability calculation
   // Banks typically use ~30% of gross income minus commitments
-  const assessmentRate = interestRate + 2; // Buffer rate
+  const assessmentRate = interestRate; // Use the entered rate directly
   const monthlyIncome = (income + otherIncome) / 12;
   const monthlyAvailable = monthlyIncome * 0.3 - expenses - existingRepayments;
   if (monthlyAvailable <= 0) return 0;
@@ -386,7 +386,7 @@ export default function CalculatorPage() {
                 <p className="mt-2 font-heading text-5xl font-bold">
                   {formatCurrency(borrowingPower)}
                 </p>
-                <p className="mt-1 text-sm text-white/50">based on a {bpRate}% assessment rate + 2% buffer</p>
+                <p className="mt-1 text-sm text-white/50">based on a {bpRate}% assessment rate</p>
 
                 {/* Visual gauge */}
                 <div className="mt-6">
@@ -436,8 +436,8 @@ export default function CalculatorPage() {
               <CardContent className="p-6">
                 <p className="text-xs font-medium text-muted-foreground">
                   ⚠️ This is an indicative estimate only. Actual borrowing capacity depends on 
-                  your full financial profile, credit history, and lender criteria. Assessment uses 
-                  a +2% buffer rate per APRA guidelines. Speak to a licensed broker for an accurate figure. 
+                  your full financial profile, credit history, and lender criteria. 
+                  Speak to a licensed broker for an accurate figure. 
                   Mazal Mortgages does not provide credit advice.
                 </p>
               </CardContent>

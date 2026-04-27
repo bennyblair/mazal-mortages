@@ -160,6 +160,9 @@ export default function HomePage() {
         .subtitle-entrance { animation: swipeInRight 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
         .button-entrance { animation: zoomBounceIn 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards; }
         .typewriter-text { overflow: hidden; white-space: nowrap; border-right: 3px solid #C9A84C; animation: typewriter 2s steps(40) forwards, blink 0.7s step-end infinite; display: inline-block; }
+        @media (max-width: 640px) {
+          .typewriter-text { white-space: normal; animation: none; border-right: none; width: auto; text-align: center; }
+        }
         .shimmer-text { background: linear-gradient(90deg, #C9A84C 0%, #fff 15%, #C9A84C 30%, #C9A84C 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 3s linear infinite; }
       `}</style>
 
