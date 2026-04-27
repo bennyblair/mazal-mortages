@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { TiltCard } from "@/components/ui/tilt-card";
 import Link from "next/link";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock, Home, TrendingUp, RefreshCw, BarChart3 } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,6 +20,7 @@ const posts = [
     category: "First Home Buyers",
     readTime: "8 min read",
     date: "March 2026",
+    icon: Home,
   },
   {
     slug: "fixed-vs-variable-rates",
@@ -28,6 +29,7 @@ const posts = [
     category: "Tips",
     readTime: "5 min read",
     date: "February 2026",
+    icon: TrendingUp,
   },
   {
     slug: "refinancing-checklist",
@@ -36,6 +38,7 @@ const posts = [
     category: "Refinancing",
     readTime: "6 min read",
     date: "January 2026",
+    icon: RefreshCw,
   },
   {
     slug: "investment-property-tax-benefits",
@@ -44,6 +47,7 @@ const posts = [
     category: "Investment",
     readTime: "7 min read",
     date: "December 2025",
+    icon: BarChart3,
   },
 ];
 
@@ -72,7 +76,9 @@ export default function BlogPage() {
             <Link href={`/blog/${post.slug}`}>
               <Card className="group h-full border-border/60 transition-all hover:border-gold/40 hover:shadow-lg">
                 <CardContent className="flex flex-col gap-4 p-6">
-                  <div className="h-48 rounded-lg bg-navy/5 transition-colors group-hover:bg-gold/5" />
+                  <div className="flex h-48 items-center justify-center rounded-lg bg-gradient-to-br from-navy/5 to-navy/10 transition-colors group-hover:from-gold/5 group-hover:to-gold/10">
+                    <post.icon className="h-16 w-16 text-navy/20 transition-colors group-hover:text-gold/30" />
+                  </div>
                   <div className="flex items-center gap-3">
                     <Badge variant="secondary" className="text-xs">
                       {post.category}

@@ -55,7 +55,7 @@ function calculateBorrowingPower(
 
 export default function CalculatorPage() {
   const [loanAmount, setLoanAmount] = useState(600000);
-  const [interestRate, setInterestRate] = useState(6.2);
+  const [interestRate, setInterestRate] = useState(5.8);
   const [loanTerm, setLoanTerm] = useState(30);
 
   // Borrowing power state
@@ -63,7 +63,7 @@ export default function CalculatorPage() {
   const [otherIncome, setOtherIncome] = useState(0);
   const [monthlyExpenses, setMonthlyExpenses] = useState(2500);
   const [existingRepayments, setExistingRepayments] = useState(0);
-  const [bpRate, setBpRate] = useState(6.2);
+  const [bpRate, setBpRate] = useState(5.8);
   const [bpTerm, setBpTerm] = useState(30);
 
   const results = useMemo(() => {
@@ -437,7 +437,7 @@ export default function CalculatorPage() {
                 <p className="text-xs font-medium text-muted-foreground">
                   ⚠️ This is an indicative estimate only. Actual borrowing capacity depends on 
                   your full financial profile, credit history, and lender criteria. Assessment uses 
-                  a +3% buffer rate per APRA guidelines. Speak to a licensed broker for an accurate figure. 
+                  a +2% buffer rate per APRA guidelines. Speak to a licensed broker for an accurate figure. 
                   Mazal Mortgages does not provide credit advice.
                 </p>
               </CardContent>

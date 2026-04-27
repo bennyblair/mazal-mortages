@@ -192,7 +192,7 @@ export default function ServicesPage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-white/20 text-white hover:bg-white/10"
+              className="border-gold/40 text-gold hover:bg-gold/10"
             >
               <Link href="/calculator">Try Our Calculator</Link>
             </Button>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const footerLinks = {
@@ -48,22 +48,15 @@ export function Footer() {
             </p>
             <div className="space-y-2 pt-2">
               <a
-                href="tel:1300000000"
+                href="tel:0411969523"
                 className="flex items-center gap-2 text-sm transition-colors hover:text-gold"
               >
                 <Phone className="h-4 w-4 text-gold" />
-                1300 000 000
-              </a>
-              <a
-                href="mailto:hello@mazalmortgages.com.au"
-                className="flex items-center gap-2 text-sm transition-colors hover:text-gold"
-              >
-                <Mail className="h-4 w-4 text-gold" />
-                hello@mazalmortgages.com.au
+                0411 969 523
               </a>
               <div className="flex items-center gap-2 text-sm">
                 <MapPin className="h-4 w-4 text-gold" />
-                Melbourne, Victoria
+                Australia Wide
               </div>
             </div>
           </div>

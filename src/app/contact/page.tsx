@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Phone, Mail, MapPin, CalendarDays } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -84,12 +84,12 @@ export default function ContactPage() {
                           <SelectValue placeholder="What can we help with?" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="home">Home Loan Referral</SelectItem>
-                          <SelectItem value="investment">Investment Loan Referral</SelectItem>
-                          <SelectItem value="refinance">Refinancing Referral</SelectItem>
-                          <SelectItem value="first-home">First Home Buyer Referral</SelectItem>
-                          <SelectItem value="commercial">Commercial Loan Referral</SelectItem>
-                          <SelectItem value="construction">Construction Loan Referral</SelectItem>
+                          <SelectItem value="home">Home Loan</SelectItem>
+                          <SelectItem value="investment">Investment Loan</SelectItem>
+                          <SelectItem value="refinance">Refinancing</SelectItem>
+                          <SelectItem value="first-home">First Home Buyer</SelectItem>
+                          <SelectItem value="commercial">Commercial Loan</SelectItem>
+                          <SelectItem value="construction">Construction Loan</SelectItem>
                           <SelectItem value="general">General Enquiry</SelectItem>
                         </SelectContent>
                       </Select>
@@ -126,53 +126,20 @@ export default function ContactPage() {
                   Contact Details
                 </h3>
                 <a
-                  href="tel:1300000000"
+                  href="tel:0411969523"
                   className="flex items-center gap-3 text-sm text-foreground/80 hover:text-gold transition-colors"
                 >
                   <Phone className="h-5 w-5 text-gold" />
-                  1300 000 000
-                </a>
-                <a
-                  href="mailto:hello@mazalmortgages.com.au"
-                  className="flex items-center gap-3 text-sm text-foreground/80 hover:text-gold transition-colors"
-                >
-                  <Mail className="h-5 w-5 text-gold" />
-                  hello@mazalmortgages.com.au
+                  0411 969 523
                 </a>
                 <div className="flex items-center gap-3 text-sm text-foreground/80">
                   <MapPin className="h-5 w-5 text-gold" />
-                  Melbourne, Victoria, Australia
+                  Australia Wide
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-gold/30 bg-gold/5">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <CalendarDays className="h-5 w-5 text-gold" />
-                  <h3 className="font-heading text-lg font-semibold text-navy">
-                    Book a Call
-                  </h3>
-                </div>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Prefer to chat? Schedule a free call to discuss how our
-                  referral service works.
-                </p>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full border-gold text-gold hover:bg-gold hover:text-navy"
-                >
-                  <a
-                    href="https://calendly.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Open Calendly
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
+
 
             <Card className="border-border/60">
               <CardContent className="p-6">

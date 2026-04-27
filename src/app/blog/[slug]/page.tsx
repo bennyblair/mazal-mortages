@@ -233,16 +233,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             if (!trimmed) return null;
             if (trimmed.startsWith("## "))
               return <h2 key={i}>{trimmed.replace("## ", "")}</h2>;
-            if (trimmed.startsWith("- "))
+            if (trimmed.startsWith("- ")) {
+              const listText = trimmed.replace("- ", "");
               return (
                 <p key={i} className="ml-4 flex items-start gap-2">
                   <span className="text-gold mt-1">•</span>
-                  <span>{trimmed.replace("- ", "")}</span>
+                  <span dangerouslySetInnerHTML={{ __html: listText.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') }} />
                 </p>
               );
-            if (trimmed.startsWith("**") && trimmed.endsWith("**"))
+            }
+            if (/^\d+\.\s/.test(trimmed)) {
+              const stepText = trimmed.replace(/^\d+\.\s/, "");
+              return (
+                <p key={i} className="ml-4" dangerouslySetInnerHTML={{ __html: stepText.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') }} />
+              );
+            }
+            if (trimmed.startsWith("**") && trimmed.endsWith("**") && !trimmed.slice(2, -2).includes("**"))
               return <p key={i} className="font-semibold text-navy">{trimmed.replace(/\*\*/g, "")}</p>;
-            return <p key={i}>{trimmed}</p>;
+            return <p key={i} dangerouslySetInnerHTML={{ __html: trimmed.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') }} />;
           })}
         </article>
 

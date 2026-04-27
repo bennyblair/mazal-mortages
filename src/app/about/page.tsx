@@ -40,16 +40,19 @@ const team = [
   {
     name: "Daniel Mazal",
     role: "Founder",
+    initials: "DM",
     bio: "With years of experience in the finance industry, Daniel founded Mazal Mortgages to help Australians connect with the right mortgage broker — simply and transparently.",
   },
   {
     name: "Rebecca Liu",
     role: "Client Relations Manager",
+    initials: "RL",
     bio: "Rebecca ensures every client is matched with a broker who understands their unique situation and goals.",
   },
   {
     name: "Michael Torres",
     role: "Partnerships Manager",
+    initials: "MT",
     bio: "Michael manages our network of licensed brokers, ensuring every professional in our network meets our high standards.",
   },
 ];
@@ -160,7 +163,9 @@ export default function AboutPage() {
             <TiltCard className="rounded-xl h-full">
             <Card className="border-border/60 h-full">
               <CardContent className="p-6">
-                <div className="mb-4 h-48 rounded-lg bg-navy/10" />
+                <div className="mb-4 flex h-48 items-center justify-center rounded-lg bg-gradient-to-br from-navy to-navy/80">
+                  <span className="font-heading text-5xl font-bold text-gold">{member.initials}</span>
+                </div>
                 <h3 className="font-heading text-lg font-semibold text-navy">{member.name}</h3>
                 <p className="text-sm font-medium text-gold">{member.role}</p>
                 <p className="mt-3 text-sm text-muted-foreground">{member.bio}</p>

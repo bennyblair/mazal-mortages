@@ -48,11 +48,11 @@ export function Header() {
         {/* Desktop CTA */}
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href="tel:1300000000"
+            href="tel:0411969523"
             className="flex items-center gap-2 text-sm font-medium text-navy"
           >
             <Phone className="h-4 w-4 text-gold" />
-            1300 000 000
+            0411 969 523
           </a>
           <Button
             asChild
