@@ -55,7 +55,7 @@ function calculateBorrowingPower(
 
 export default function CalculatorPage() {
   const [loanAmount, setLoanAmount] = useState(600000);
-  const [interestRate, setInterestRate] = useState(5.8);
+  const [interestRate, setInterestRate] = useState(5.6);
   const [loanTerm, setLoanTerm] = useState(30);
 
   // Borrowing power state
@@ -63,7 +63,7 @@ export default function CalculatorPage() {
   const [otherIncome, setOtherIncome] = useState(0);
   const [monthlyExpenses, setMonthlyExpenses] = useState(2500);
   const [existingRepayments, setExistingRepayments] = useState(0);
-  const [bpRate, setBpRate] = useState(5.8);
+  const [bpRate, setBpRate] = useState(5.6);
   const [bpTerm, setBpTerm] = useState(30);
 
   const results = useMemo(() => {
@@ -337,14 +337,14 @@ export default function CalculatorPage() {
                     value={monthlyExpenses}
                     onChange={(e) => setMonthlyExpenses(Number(e.target.value))}
                     min={0}
-                    max={20000}
+                    max={5000}
                     step={100}
                     className="text-lg"
                   />
                   <input
                     type="range"
                     min={500}
-                    max={10000}
+                    max={5000}
                     step={100}
                     value={monthlyExpenses}
                     onChange={(e) => setMonthlyExpenses(Number(e.target.value))}
@@ -352,7 +352,7 @@ export default function CalculatorPage() {
                   />
                   <div className="flex justify-between text-xs text-muted-foreground">
                     <span>$500</span>
-                    <span>$10k</span>
+                    <span>$5k</span>
                   </div>
                 </div>
 

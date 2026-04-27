@@ -76,8 +76,8 @@ export default function BlogPage() {
             <Link href={`/blog/${post.slug}`}>
               <Card className="group h-full border-border/60 transition-all hover:border-gold/40 hover:shadow-lg">
                 <CardContent className="flex flex-col gap-4 p-6">
-                  <div className="flex h-48 items-center justify-center rounded-lg bg-gradient-to-br from-navy/5 to-navy/10 transition-colors group-hover:from-gold/5 group-hover:to-gold/10">
-                    <post.icon className="h-16 w-16 text-navy/20 transition-colors group-hover:text-gold/30" />
+                  <div className="flex h-48 items-center justify-center rounded-lg bg-gradient-to-br from-gold/10 to-gold/20 transition-colors group-hover:from-gold/20 group-hover:to-gold/30">
+                    <post.icon className="h-16 w-16 text-gold/50 transition-colors group-hover:text-gold" />
                   </div>
                   <div className="flex items-center gap-3">
                     <Badge variant="secondary" className="text-xs">
