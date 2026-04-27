@@ -369,7 +369,7 @@ export default function HomePage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-white/20 text-white hover:bg-white/10 text-base px-8"
+              className="border-gold/40 text-gold hover:bg-gold/10 text-base px-8"
             >
               <Link href="/contact">Contact Us</Link>
             </Button>
