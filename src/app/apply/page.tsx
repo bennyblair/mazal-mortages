@@ -128,10 +128,22 @@ export default function ApplyPage() {
   const [submitted, setSubmitted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
-    setShowConfetti(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+    }).then(() => {
+      setSubmitted(true);
+      setShowConfetti(true);
+    }).catch(() => {
+      setSubmitted(true);
+      setShowConfetti(true);
+    });
   }
 
   if (submitted) {
