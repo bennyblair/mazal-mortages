@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowRight, CheckCircle2, CalendarDays } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 interface ConfettiPiece {
   x: number;
@@ -155,23 +155,6 @@ export default function ApplyPage() {
               We&apos;ve received your referral enquiry and will introduce you to a
               licensed mortgage broker within one business day.
             </p>
-            <div className="mt-8 rounded-xl bg-gold/5 border border-gold/20 p-6">
-              <CalendarDays className="mx-auto h-8 w-8 text-gold" />
-              <p className="mt-3 font-heading text-lg font-semibold text-navy">
-                Want to speed things up?
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Book a call and we&apos;ll arrange your broker introduction sooner.
-              </p>
-              <Button
-                asChild
-                className="mt-4 bg-gold text-navy font-semibold hover:bg-gold-light"
-              >
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-                  Book a Call
-                </a>
-              </Button>
-            </div>
             <p className="mt-6 text-xs text-muted-foreground">
               Mazal Mortgages is a referral service only. We do not provide credit
               advice or arrange loans. The broker you are introduced to will assess
